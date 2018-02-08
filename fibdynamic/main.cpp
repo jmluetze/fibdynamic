@@ -14,18 +14,21 @@ int fibdynamic (int a, int fibArray[]);
 
 int main(int argc, const char * argv[]) {
     
-    int fibInt = 60;
+    int fibInt = 30;
     
+    cout << "Below is the result of the \"normal\" fib function:\n";
     cout << fib(fibInt);
-    cout << "\n";
+    
+    cout << "\n\nBelow is the result of the Tail-Recursive fib function:\n";
     cout << fibtail(fibInt, 1, 0);
-    cout << "\n";
     
+    // initializing array with -1 to identify open spots
     int fibArray[fibInt +1];
-    for (int i = 0; i <= fibInt; i++) {fibArray[i] = -1;}   //initializing array
+    for (int i = 0; i <= fibInt; i++) {fibArray[i] = -1;}
     
+    cout << "\n\nBelow is the result of the dynamicly programmed/memoized fib function:\n";
     cout << fibdynamic(fibInt, fibArray);
-    cout << "\n";
+    cout << "\n\n";
     
     return 0;
 }
